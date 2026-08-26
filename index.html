@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>FOX PODCAST — Video Podcast Studio, London</title>
+<meta name="description" content="FOX PODCAST films and edits video podcasts to a Netflix standard. London studio sessions and on-location shoots. Rated 5.0 from 70+ Google reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Instrument+Sans:ital,wght@0,400..700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0A0A0A; color: #F4F1EA; font-family: 'Instrument Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #B00710; text-decoration: none; }
+  a:hover { color: #D81420; }
+  ::selection { background: #B00710; color: #0A0A0A; }
+  .shelf::-webkit-scrollbar { height: 0; }
+  @keyframes onair { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+  @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+
+<div style="position: relative; overflow-x: clip; background-color: #101010; background-image: linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 70%, rgba(10,10,10,.9) 100%), repeating-linear-gradient(115deg, #151515 0 20px, #101010 20px 40px)">
+
+<sc-if value="{{ filmGrain }}" hint-placeholder-val="{{ true }}">
+  <div style="position: fixed; inset: 0; z-index: 90; pointer-events: none; mix-blend-mode: overlay; background-image: url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22&gt;&lt;filter id=%22n%22&gt;&lt;feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/&gt;&lt;/filter&gt;&lt;rect width=%22160%22 height=%22160%22 filter=%22url(%23n)%22/&gt;&lt;/svg&gt;'); left: -6px; top: -78px"></div>
+  <div style="position: fixed; inset: 0; z-index: 89; pointer-events: none; box-shadow: inset 0 0 220px 60px rgba(0,0,0,.75)"></div>
+</sc-if>
+
+<!-- NAV -->
+<header style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(14px); border-bottom: 1px solid rgba(244,241,234,.08); transition: background .3s ease; background-color: #2A2929">
+  <nav ref="{{ navRef }}" style="max-width: 1400px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px">
+    <a href="#top" style="display: flex; align-items: center; gap: 12px; color: #F4F1EA">
+      <img src="uploads/video-production-london.png" alt="Fox Podcast logo" style="width: 34px; height: 34px; border-radius: 4px; display: block;">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #B00710; box-shadow: 0 0 12px #B00710; animation: onair 2.4s ease-in-out infinite;"></span>
+      <span style="font-family: Anton, sans-serif; font-size: clamp(15px, 1.35vw, 21px); letter-spacing: .13em; text-transform: uppercase; white-space: nowrap;">LONDON VIDEO PODCAST STUDIO</span>
+    </a>
+    <div style="display: flex; flex-wrap: wrap; gap: 12px 26px; margin-left: auto; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: rgba(244,241,234,.62)">
+      <a href="#work" style="color: inherit" style-hover="color: #F4F1EA;">Work</a>
+      <a href="#services" style="color: inherit;" style-hover="color: #F4F1EA;">Services</a>
+      <a href="#location" style="color: inherit;" style-hover="color: #F4F1EA;">On-Location</a>
+      <a href="#reviews" style="color: inherit" style-hover="color: #F4F1EA;">Reviews</a>
+      <a href="#pricing" style="color: inherit;" style-hover="color: #F4F1EA;">Pricing</a>
+      <a href="#faq" style="color: inherit;" style-hover="color: #F4F1EA;">FAQ</a>
+      <a href="tel:+447519094376" style="color: #B00710; font-weight: 600;" style-hover="color: #D81420;">07519 094376</a>
+    </div>
+    <a href="#book" style="background: #B00710; color: #0A0A0A; font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 12px 20px; border-radius: 3px; transition: transform .18s ease, box-shadow .18s ease;" style-hover="transform: translateY(-1px); box-shadow: 0 8px 26px rgba(176,7,16,.36); color: #0A0A0A;">AVAILABILITY</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" data-screen-label="Hero" style="position: relative; min-height: 80vh; display: flex; flex-direction: column; justify-content: flex-end; padding-top: max(76px, var(--fox-hdr, 76px)); padding-left: 32px; padding-right: 32px; padding-bottom: 0">
+  <div style="position: absolute; inset: 0; background: #0F0F0F; overflow: hidden">
+    <video ref="{{ heroVideoRef }}" src="uploads/PODCAST OCT 2025.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="width: 100%; height: 100%; object-fit: cover; object-position: 70% center; display: block; transform: scaleX(-1);"></video>
+  </div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.88) 38%, rgba(10,10,10,.45) 62%, rgba(10,10,10,.72) 100%); display: none"></div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.7) 0%, rgba(10,10,10,.15) 40%, rgba(10,10,10,.92) 100%);"></div>
+
+
+  <div style="position: relative; max-width: 1400px; width: 100%; margin: 0 auto; padding-bottom: 46px;">
+    <div data-reveal="" style="max-width: min(760px, 62%);">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B00710;">
+        <span style="width: 34px; height: 1px; background: #B00710;"></span>London's premium podcast studio
+      </div>
+      <h1 style="font-family: Anton, sans-serif; font-size: clamp(44px, 6vw, 104px); line-height: .92; letter-spacing: -.015em; text-transform: uppercase; margin: 0 0 26px; text-wrap: balance;">Podcasts filmed<br>and edited to a<br><span style="color: #B00710;">Netflix standard.</span></h1>
+      <p style="font-size: clamp(19px, 1.6vw, 23px); line-height: 1.5; color: rgba(244,241,234,.74); max-width: 620px; margin: 0 0 40px; text-wrap: pretty;">Record in our London studio, or we bring the full set to your office, event or live session. You leave with a show — not a recording.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+        <a href="#book" style="background: #B00710; color: #0A0A0A; font-weight: 600; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; padding: 18px 34px; border-radius: 3px; transition: transform .18s ease, box-shadow .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 14px 40px rgba(176,7,16,.4); color: #0A0A0A;">Book Your Session</a>
+        <a href="#work" style="border: 1px solid rgba(244,241,234,.28); color: #F4F1EA; font-weight: 600; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; padding: 18px 34px; border-radius: 3px; transition: border-color .18s ease, background .18s ease;" style-hover="border-color: #F4F1EA; background: rgba(244,241,234,.07); color: #F4F1EA;">See Our Work</a>
+        <button type="button" onClick="{{ openReel }}" style="display: flex; align-items: center; gap: 12px; background: none; border: none; cursor: pointer; color: rgba(244,241,234,.8); font-family: 'Instrument Sans', sans-serif; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; padding: 18px 8px;" style-hover="color: #F4F1EA;">
+          <span style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(244,241,234,.35); display: flex; align-items: center; justify-content: center; font-size: 11px;">▶</span>Play Showreel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: relative; border-top: 1px solid rgba(244,241,234,.1); background: rgba(10,10,10,.6)">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px;">
+      <span style="color: #B00710; letter-spacing: .18em; font-size: 15px;">★★★★★</span>
+      <span style="font-weight: 600; font-size: 14px;">Rated 5.0 from 70+ reviews on Google</span>
+      <a href="https://maps.app.goo.gl/EdwBxLAB3ctV2zjQ8" style="font-size: 13px; color: rgba(244,241,234,.5); letter-spacing: .04em;" style-hover="color: #B00710;" target="_blank" rel="noopener noreferrer">Read the reviews →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT STRIP -->
+<section style="border-bottom: 1px solid rgba(244,241,234,.08); overflow: hidden; background-color: #101010; background-image: linear-gradient(180deg, rgba(244,241,234,.045), rgba(244,241,234,.045)), linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 70%, rgba(10,10,10,.9) 100%), repeating-linear-gradient(115deg, #151515 0 20px, #101010 20px 40px)">
+  <div style="display: flex; width: max-content; animation: marq 34s linear infinite;">
+    <sc-for list="{{ clientRow }}" as="c" hint-placeholder-count="10">
+      <span style="padding: 22px 40px; font-family: Anton, sans-serif; font-size: 17px; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,241,234,.34); white-space: nowrap;">{{ c }}</span>
+    </sc-for>
+  </div>
+</section>
+
+<!-- THE WORK -->
+
+
+<!-- SERVICES -->
+<section id="work" data-screen-label="The Work" style="padding: 130px 0 110px">
+  <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px">
+    <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px; margin-bottom: 44px">
+      <div>
+        <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B00710; margin-bottom: 18px;">The work</div>
+        <h2 style="font-family: Anton, sans-serif; font-size: clamp(38px, 5.4vw, 82px); line-height: .95; text-transform: uppercase; margin: 0; letter-spacing: -.01em;">Shows worth<br>binge-watching.</h2>
+      </div>
+      <p style="margin: 0 0 6px auto; max-width: 380px; font-size: 20px; line-height: 1.6; color: rgba(244,241,234,.74); text-wrap: pretty;">Every title below started as a conversation in a room. It left as a series people queue up for.</p>
+    </div>
+  </div>
+
+  <div class="shelf" ref="{{ shelfRef }}" style="display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 32px 30px; scrollbar-width: none; max-width: 1400px; margin: 0 auto">
+    <sc-for list="{{ posters }}" as="p" hint-placeholder-count="5">
+      <a href="{{ p.href }}" style="flex: 0 0 clamp(240px, 25vw, 330px); scroll-snap-align: start; display: block; color: inherit; transition: transform .28s cubic-bezier(.2,.7,.2,1)" style-hover="transform: translateY(-8px) scale(1.02); color: inherit;">
+        <div style="position: relative; aspect-ratio: 2/3; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #1A1A1A 0 14px, #131313 14px 28px); border: 1px solid rgba(244,241,234,.1)">
+          <div role="img" aria-label="{{ p.title }}" style="{{ p.artStyle }}"></div>
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0) 24%, rgba(10,10,10,.62) 52%, rgba(10,10,10,.96) 74%, #0A0A0A 100%);"></div>
+          <div style="position: absolute; top: 14px; left: 14px; background: rgba(10,10,10,.7); border: 1px solid rgba(244,241,234,.2); padding: 5px 9px; border-radius: 2px; font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: rgba(244,241,234,.8);">{{ p.genre }}</div>
+          <div style="position: absolute; left: 18px; right: 18px; bottom: 18px;">
+            <h3 style="font-family: Anton, sans-serif; font-size: 26px; line-height: 1; text-transform: uppercase; margin: 0 0 8px;">{{ p.title }}</h3>
+            <p style="margin: 0 0 10px; font-size: 17px; line-height: 1.5; color: rgba(244,241,234,.72);">{{ p.tagline }}</p>
+            <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #B00710;">{{ p.meta }}</div>
+          </div>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+
+  <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; gap: 10px; justify-content: flex-end">
+    <button type="button" onClick="{{ shelfPrev }}" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(244,241,234,.22); background: none; color: #F4F1EA; cursor: pointer; font-size: 14px;" style-hover="background: rgba(244,241,234,.09);">←</button>
+    <button type="button" onClick="{{ shelfNext }}" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(244,241,234,.22); background: none; color: #F4F1EA; cursor: pointer; font-size: 14px;" style-hover="background: rgba(244,241,234,.09);">→</button>
+  </div>
+
+  <div style="max-width: 1400px; margin: 66px auto 0; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+    <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
+      <div data-reveal="" style="border: 1px solid rgba(244,241,234,.1); border-radius: 5px; padding: 26px; background: linear-gradient(180deg, rgba(244,241,234,.035), rgba(244,241,234,0)); transition: border-color .25s ease;" style-hover="border-color: rgba(176,7,16,.5);">
+        <div style="font-family: Anton, sans-serif; font-size: 46px; line-height: 1; color: #B00710; margin-bottom: 14px;">{{ c.stat }}</div>
+        <h3 style="font-family: Anton, sans-serif; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 10px;">{{ c.name }}</h3>
+        <p style="margin: 0; font-size: 19px; line-height: 1.62; color: rgba(244,241,234,.75); text-wrap: pretty;">{{ c.result }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section><section id="services" data-screen-label="Services" style="padding: 110px 32px; background-color: #101010; background-image: linear-gradient(180deg, rgba(244,241,234,.045), rgba(244,241,234,.045)), linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 70%, rgba(10,10,10,.9) 100%), repeating-linear-gradient(115deg, #151515 0 20px, #101010 20px 40px); border-top: 1px solid rgba(244,241,234,.08); border-bottom: 1px solid rgba(244,241,234,.08)">
+  <div style="max-width: 1400px; margin: 0 auto">
+    <div data-reveal="" style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B00710; margin-bottom: 18px;">Two ways to work</div>
+    <h2 data-reveal="" style="font-family: Anton, sans-serif; font-size: clamp(34px, 4.6vw, 68px); line-height: .98; text-transform: uppercase; margin: 0 0 52px; max-width: 860px;">Our set, or yours.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px;">
+      <div data-reveal="" style="border: 1px solid rgba(244,241,234,.12); border-radius: 6px; overflow: hidden;">
+        <img src="uploads/podcast studio london.png" alt="Guest recording in the London studio" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;">
+        <div style="padding: 32px;">
+          <h3 style="font-family: Anton, sans-serif; font-size: 30px; text-transform: uppercase; margin: 0 0 14px;">Studio Production — London</h3>
+          <p style="margin: 0 0 22px; font-size: 20px; line-height: 1.62; color: rgba(244,241,234,.8); text-wrap: pretty;">Walk in with an idea, walk out with a show that looks like it belongs on a streaming platform. Multi-camera coverage, broadcast lighting, clean sound and a finished edit — delivery-ready, per episode.</p>
+          <ul style="list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 12px; font-size: 18px; color: rgba(244,241,234,.85);">
+            <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Guests arrive to a real set, not a spare room</li>
+            <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Full episode, shorts and stills from one session</li>
+            <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Colour, sound and titles handled end to end</li>
+          </ul>
+          <a href="#book" style="font-size: 14px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid rgba(176,7,16,.4); padding-bottom: 4px;">Book the studio →</a>
+        </div>
+      </div>
+      <div data-reveal="" style="border: 1px solid rgba(244,241,234,.12); border-radius: 6px; overflow: hidden;">
+        <img src="uploads/podcast studio on the go.png" alt="On-location podcast recording in an office" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;">
+        <div style="padding: 32px;">
+          <h3 style="font-family: Anton, sans-serif; font-size: 30px; text-transform: uppercase; margin: 0 0 14px;">On-Location Podcasting</h3>
+          <p style="margin: 0 0 22px; font-size: 20px; line-height: 1.62; color: rgba(244,241,234,.8); text-wrap: pretty;">We bring the studio to you. Offices, conferences, live audiences — the same production standard, built and struck around your day. Ideal for a launch moment or an event you want to keep talking about.</p>
+          <ul style="list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 12px; font-size: 18px; color: rgba(244,241,234,.85);">
+            <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Set, lighting and crew travel with us</li>
+            <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Built in two hours, invisible to your guests</li>
+            <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Multiple episodes captured in a single day</li>
+          </ul>
+          <a href="#book" style="font-size: 14px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid rgba(176,7,16,.4); padding-bottom: 4px;">Book a location shoot →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO SHOWCASE -->
+<section data-screen-label="Studio" style="padding: 110px 32px">
+  <div style="max-width: 1400px; margin: 0 auto">
+    <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+      <h2 style="font-family: Anton, sans-serif; font-size: clamp(34px, 4.6vw, 68px); line-height: .98; text-transform: uppercase; margin: 0; max-width: 620px;">Built for guests to feel like they're on a real show set.</h2>
+      <p style="margin: 0 0 6px auto; max-width: 360px; font-size: 20px; line-height: 1.6; color: rgba(244,241,234,.74);">Warm, low-lit, quiet. The kind of room that makes people forget the cameras and say the thing they came to say.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 170px; gap: 14px">
+      <sc-for list="{{ studioShots }}" as="s" hint-placeholder-count="5">
+        <figure data-reveal="" style="grid-column: {{ s.col }}; grid-row: {{ s.row }}; margin: 0; position: relative; border-radius: 4px; overflow: hidden; background: #111;">
+          <div role="img" aria-label="{{ s.label }}" style="{{ s.artStyle }}"></div>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" data-screen-label="Reviews" style="padding: 110px 32px; background-color: #101010; background-image: linear-gradient(180deg, rgba(244,241,234,.045), rgba(244,241,234,.045)), linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 70%, rgba(10,10,10,.9) 100%), repeating-linear-gradient(115deg, #151515 0 20px, #101010 20px 40px); border-top: 1px solid rgba(244,241,234,.08)">
+  <div style="max-width: 1100px; margin: 0 auto; text-align: center">
+    <div data-reveal="" style="display: inline-flex; align-items: center; gap: 12px; border: 1px solid rgba(176,7,16,.35); border-radius: 999px; padding: 9px 18px; margin-bottom: 32px;">
+      <span style="color: #B00710; letter-spacing: .16em; font-size: 13px;">★★★★★</span>
+      <span style="font-size: 13px; letter-spacing: .06em;">5.0 · 70+ Google reviews</span>
+    </div>
+    <div style="min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+      <blockquote style="font-family: Anton, sans-serif; font-size: clamp(24px, 3.2vw, 44px); line-height: 1.16; text-transform: uppercase; margin: 0 0 28px; text-wrap: balance;">“{{ quote.text }}”</blockquote>
+      <div style="font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,241,234,.56);">{{ quote.author }} — {{ quote.company }}</div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 36px;">
+      <sc-for list="{{ quoteDots }}" as="d" hint-placeholder-count="5">
+        <button type="button" onClick="{{ d.go }}" aria-label="Show review" style="width: {{ d.w }}; height: 3px; border: none; border-radius: 2px; background: {{ d.bg }}; cursor: pointer; padding: 0; transition: all .3s ease;"></button>
+      </sc-for>
+    </div>
+    <a href="https://www.google.com/search?q=fox+podcast+london+reviews" target="_blank" rel="noopener" style="display: inline-block; margin-top: 34px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase;">Read all reviews on Google →</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section data-screen-label="Process" style="padding: 110px 32px; border-top: 1px solid rgba(244,241,234,.08);">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <h2 data-reveal="" style="font-family: Anton, sans-serif; font-size: clamp(34px, 4.6vw, 68px); line-height: .98; text-transform: uppercase; margin: 0 0 52px;">Four steps to a show.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; border-top: 1px solid rgba(244,241,234,.14);">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+        <div data-reveal="" style="padding: 28px 24px 34px 0;">
+          <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .2em; color: #B00710; margin-bottom: 20px;">{{ s.n }}</div>
+          <h3 style="font-family: Anton, sans-serif; font-size: 24px; text-transform: uppercase; margin: 0 0 10px;">{{ s.title }}</h3>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6; color: rgba(244,241,234,.72);">{{ s.copy }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ON-LOCATION SPOTLIGHT -->
+<section id="location" data-screen-label="On-Location" style="position: relative; padding: 130px 32px">
+  <div style="position: relative; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; align-items: center;">
+    <div data-reveal="">
+      <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B00710; margin-bottom: 18px;">On-location</div>
+      <h2 style="font-family: Anton, sans-serif; font-size: clamp(34px, 4.8vw, 72px); line-height: .96; text-transform: uppercase; margin: 0 0 24px;">We bring the studio to you.</h2>
+      <p style="font-size: 21px; line-height: 1.6; color: rgba(244,241,234,.8); max-width: 480px; margin: 0 0 34px; text-wrap: pretty;">Your office boardroom, a conference stage, a members' club at midnight. We travel with the full set and leave the room exactly as we found it.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; max-width: 480px;">
+        <div><div style="font-family: Anton, sans-serif; font-size: 34px; color: #B00710; line-height: 1;">2 hrs</div><div style="font-size: 15px; color: rgba(244,241,234,.66); margin-top: 6px;">Set build time</div></div>
+        <div><div style="font-family: Anton, sans-serif; font-size: 34px; color: #B00710; line-height: 1;">150 mi</div><div style="font-size: 15px; color: rgba(244,241,234,.66); margin-top: 6px;">Radius from London</div></div>
+        <div><div style="font-family: Anton, sans-serif; font-size: 34px; color: #B00710; line-height: 1;">6 eps</div><div style="font-size: 15px; color: rgba(244,241,234,.66); margin-top: 6px;">Captured in a day</div></div>
+      </div>
+    </div>
+    <div data-reveal="" style="aspect-ratio: 4/3; border-radius: 5px; border: 1px solid rgba(244,241,234,.14); overflow: hidden;">
+      <img src="uploads/podcast-location-england.jpeg" alt="On-location podcast set built under a canopy in the English countryside" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="book" data-screen-label="Booking" style="padding: 120px 32px; border-top: 1px solid rgba(244,241,234,.08)">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div data-reveal="" style="text-align: center; margin-bottom: 52px;">
+      <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B00710; margin-bottom: 18px;">Booking</div>
+      <h2 style="font-family: Anton, sans-serif; font-size: clamp(34px, 5vw, 74px); line-height: .96; text-transform: uppercase; margin: 0 auto 18px; max-width: 780px; text-wrap: balance;">Your podcast could look like this. Pick a date and let's film it.</h2>
+      <p style="font-size: 19px; color: rgba(244,241,234,.74); margin: 0;">Sessions run Monday to Saturday. Choose a slot and we'll confirm within the hour.</p>
+    </div>
+
+    <div style="border: 1px solid rgba(244,241,234,.13); border-radius: 8px; background-color: #101010; background-image: linear-gradient(180deg, rgba(244,241,234,.045), rgba(244,241,234,.045)), linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 70%, rgba(10,10,10,.9) 100%), repeating-linear-gradient(115deg, #151515 0 20px, #101010 20px 40px); overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <div style="padding: 34px; border-right: 1px solid rgba(244,241,234,.1);">
+        <div style="font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,241,234,.5); margin-bottom: 14px;">Session type</div>
+        <div style="display: flex; gap: 10px; margin-bottom: 30px;">
+          <button type="button" onClick="{{ pickStudio }}" style="{{ studioBtnStyle }}">Studio · London</button>
+          <button type="button" onClick="{{ pickLocation }}" style="{{ locationBtnStyle }}">On-Location</button>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+          <button type="button" onClick="{{ prevMonth }}" aria-label="Previous month" style="width: 34px; height: 34px; border-radius: 4px; border: 1px solid rgba(244,241,234,.18); background: none; color: #F4F1EA; cursor: pointer;">←</button>
+          <div style="font-family: Anton, sans-serif; font-size: 19px; letter-spacing: .12em; text-transform: uppercase;">{{ monthLabel }}</div>
+          <button type="button" onClick="{{ nextMonth }}" aria-label="Next month" style="width: 34px; height: 34px; border-radius: 4px; border: 1px solid rgba(244,241,234,.18); background: none; color: #F4F1EA; cursor: pointer;">→</button>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 10px; font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: .1em; color: rgba(244,241,234,.4); text-align: center;">
+          <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;">
+          <sc-for list="{{ cells }}" as="c" hint-placeholder-count="35">
+            <button type="button" onClick="{{ c.go }}" disabled="{{ c.disabled }}" style="{{ c.style }}">{{ c.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,241,234,.5); margin: 30px 0 14px;">Available times</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 8px;">
+          <sc-for list="{{ slots }}" as="s" hint-placeholder-count="4">
+            <button type="button" onClick="{{ s.go }}" style="{{ s.style }}">{{ s.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="padding: 34px; display: flex; flex-direction: column;">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="margin: auto 0; text-align: left;">
+            <div style="font-family: Anton, sans-serif; font-size: 30px; text-transform: uppercase; color: #B00710; margin-bottom: 14px;">Slot held.</div>
+            <p style="font-size: 20px; line-height: 1.6; color: rgba(244,241,234,.8); margin: 0 0 10px;">{{ confirmLine }}</p>
+            <p style="font-size: 17px; color: rgba(244,241,234,.6); margin: 0;">Your email app has opened with the details — send it and we'll confirm within the hour. Or reach us straight away at <a href="mailto:hello@thequickbrownfox.co.uk">hello@thequickbrownfox.co.uk</a>.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,241,234,.5); margin-bottom: 8px;">Your selection</div>
+            <div style="font-family: Anton, sans-serif; font-size: 22px; text-transform: uppercase; margin-bottom: 26px; color: {{ selectionColor }};">{{ selectionLabel }}</div>
+            <div style="display: grid; gap: 12px;">
+              <input value="{{ form.name }}" onChange="{{ setName }}" placeholder="Full name" style="width: 100%; padding: 14px 16px; background: rgba(244,241,234,.05); border: 1px solid rgba(244,241,234,.15); border-radius: 4px; color: #F4F1EA; font-family: 'Instrument Sans', sans-serif; font-size: 15px;" style-focus="border-color: #B00710; outline: none;">
+              <input value="{{ form.email }}" onChange="{{ setEmail }}" placeholder="Work email" style="width: 100%; padding: 14px 16px; background: rgba(244,241,234,.05); border: 1px solid rgba(244,241,234,.15); border-radius: 4px; color: #F4F1EA; font-family: 'Instrument Sans', sans-serif; font-size: 15px;" style-focus="border-color: #B00710; outline: none;">
+              <input value="{{ form.company }}" onChange="{{ setCompany }}" placeholder="Company or show name" style="width: 100%; padding: 14px 16px; background: rgba(244,241,234,.05); border: 1px solid rgba(244,241,234,.15); border-radius: 4px; color: #F4F1EA; font-family: 'Instrument Sans', sans-serif; font-size: 15px;" style-focus="border-color: #B00710; outline: none;">
+              <textarea value="{{ form.brief }}" onChange="{{ setBrief }}" placeholder="What's the show about?" rows="3" style="width: 100%; padding: 14px 16px; background: rgba(244,241,234,.05); border: 1px solid rgba(244,241,234,.15); border-radius: 4px; color: #F4F1EA; font-family: 'Instrument Sans', sans-serif; font-size: 15px; resize: vertical;" style-focus="border-color: #B00710; outline: none;"></textarea>
+            </div>
+            <button type="button" onClick="{{ submit }}" style="{{ submitStyle }}">Confirm booking</button>
+            <p style="font-size: 12px; color: rgba(244,241,234,.4); margin: 14px 0 0; line-height: 1.5;">No deposit taken now. Pricing is quoted per project after a 15-minute call.</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" data-screen-label="Pricing" style="padding: 110px 32px; border-top: 1px solid rgba(244,241,234,.08);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div data-reveal="" style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #B00710; margin-bottom: 18px;">Pricing</div>
+    <h2 data-reveal="" style="font-family: Anton, sans-serif; font-size: clamp(34px, 4.6vw, 68px); line-height: .98; text-transform: uppercase; margin: 0 0 18px;">Studio rates.</h2>
+    <p data-reveal="" style="font-size: 20px; line-height: 1.6; color: rgba(244,241,234,.74); max-width: 620px; margin: 0 0 48px; text-wrap: pretty;">Straightforward studio hire with our crew and kit. On-location shoots are quoted per project — tell us the day and we will price it.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+      <div data-reveal="" style="border: 1px solid rgba(244,241,234,.12); border-radius: 6px; padding: 34px; background: linear-gradient(180deg, rgba(244,241,234,.04), rgba(244,241,234,0)); transition: border-color .25s ease;" style-hover="border-color: rgba(176,7,16,.55);">
+        <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(244,241,234,.55); margin-bottom: 18px;">Half day — studio</div>
+        <div style="font-family: Anton, sans-serif; font-size: 62px; line-height: 1; margin-bottom: 6px;">£550</div>
+        <div style="font-size: 16px; color: rgba(244,241,234,.6); margin-bottom: 26px;">Four hours in the studio</div>
+        <ul style="list-style: none; margin: 0 0 30px; padding: 0; display: grid; gap: 12px; font-size: 18px; color: rgba(244,241,234,.85);">
+          <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Multi-camera filming and sound</li>
+          <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Crew, lighting and full set</li>
+          <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Ideal for one or two episodes</li>
+        </ul>
+        <a href="#book" style="font-size: 15px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid rgba(176,7,16,.45); padding-bottom: 4px;">Book a half day →</a>
+      </div>
+      <div data-reveal="" style="border: 1px solid rgba(176,7,16,.45); border-radius: 6px; padding: 34px; background: linear-gradient(180deg, rgba(176,7,16,.09), rgba(244,241,234,0));">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+          <span style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(244,241,234,.55);">Full day — studio</span>
+          <span style="background: #B00710; color: #0A0A0A; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 8px; border-radius: 2px;">Most booked</span>
+        </div>
+        <div style="font-family: Anton, sans-serif; font-size: 62px; line-height: 1; margin-bottom: 6px;">£950</div>
+        <div style="font-size: 16px; color: rgba(244,241,234,.6); margin-bottom: 26px;">Eight hours in the studio</div>
+        <ul style="list-style: none; margin: 0 0 30px; padding: 0; display: grid; gap: 12px; font-size: 18px; color: rgba(244,241,234,.85);">
+          <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Everything in the half day</li>
+          <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Batch a whole series in one sitting</li>
+          <li style="display: flex; gap: 12px;"><span style="color: #B00710;">—</span>Best value per episode</li>
+        </ul>
+        <a href="#book" style="font-size: 15px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid rgba(176,7,16,.45); padding-bottom: 4px;">Book a full day →</a>
+      </div>
+    </div>
+    <p style="font-size: 16px; color: rgba(244,241,234,.5); margin: 26px 0 0;">Prices exclude VAT. Editing and on-location days quoted separately — <a href="mailto:hello@thequickbrownfox.co.uk">email us</a> for a full quote.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" data-screen-label="FAQ" style="padding: 110px 32px; background-color: #101010; background-image: linear-gradient(180deg, rgba(244,241,234,.045), rgba(244,241,234,.045)), linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 70%, rgba(10,10,10,.9) 100%), repeating-linear-gradient(115deg, #151515 0 20px, #101010 20px 40px); border-top: 1px solid rgba(244,241,234,.08)">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <h2 data-reveal="" style="font-family: Anton, sans-serif; font-size: clamp(34px, 4.6vw, 68px); line-height: .98; text-transform: uppercase; margin: 0 0 44px;">Questions.</h2>
+    <div style="display: grid;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div style="border-top: 1px solid rgba(244,241,234,.12);">
+          <button type="button" onClick="{{ f.go }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: none; border: none; cursor: pointer; padding: 24px 0; text-align: left; color: #F4F1EA; font-family: 'Instrument Sans', sans-serif;">
+            <span style="font-size: 21px; font-weight: 600;">{{ f.q }}</span>
+            <span style="color: #B00710; font-size: 20px; flex: 0 0 auto;">{{ f.sign }}</span>
+          </button>
+          <div style="{{ f.bodyStyle }}"><p style="margin: 0 0 24px; font-size: 20px; line-height: 1.68; color: rgba(244,241,234,.78); max-width: 700px; text-wrap: pretty;">{{ f.a }}</p></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding: 90px 32px 40px; border-top: 1px solid rgba(244,241,234,.1)">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 30px; padding-bottom: 60px; border-bottom: 1px solid rgba(244,241,234,.1);">
+      <h2 style="font-family: Anton, sans-serif; font-size: clamp(32px, 4.4vw, 64px); line-height: .96; text-transform: uppercase; margin: 0; max-width: 640px;">Let's make something worth watching.</h2>
+      <a href="#book" style="margin-left: auto; background: #B00710; color: #0A0A0A; font-weight: 600; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; padding: 18px 34px; border-radius: 3px;" style-hover="box-shadow: 0 14px 40px rgba(176,7,16,.4); color: #0A0A0A;">Book Your Session</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 34px; padding: 46px 0;">
+      <div>
+        <div style="font-family: Anton, sans-serif; font-size: 19px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px;">Fox Podcast</div>
+        <p style="margin: 0; font-size: 17px; line-height: 1.75; color: rgba(244,241,234,.66);">Wandsworth Town<br>Unit LU217, The Light Bulb<br>Filament Walk, London SW18 4GQ</p>
+      </div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,241,234,.45); margin-bottom: 14px;">Contact</div>
+        <p style="margin: 0; font-size: 17px; line-height: 1.95;"><a href="mailto:hello@thequickbrownfox.co.uk">hello@thequickbrownfox.co.uk</a><br><a href="tel:+447519094376">07519 094376</a></p>
+      </div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,241,234,.45); margin-bottom: 14px;">Follow</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 17px;"><a href="https://www.instagram.com/quickbrownfoxuk" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@TQBFVP" target="_blank" rel="noopener">YouTube</a><a href="https://www.tiktok.com/@quickbrownfoxuk" target="_blank" rel="noopener">TikTok</a><a href="https://uk.linkedin.com/company/quickbrownfoxuk" target="_blank" rel="noopener">LinkedIn</a></div>
+      </div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,241,234,.45); margin-bottom: 14px;">Reviews</div>
+        <div style="color: #B00710; letter-spacing: .16em; font-size: 13px; margin-bottom: 8px;">★★★★★</div>
+        <a href="https://www.google.com/search?q=fox+podcast+london+reviews" target="_blank" rel="noopener" style="font-size: 14px;">5.0 from 70+ on Google →</a>
+      </div>
+    </div>
+    <div style="font-size: 12px; color: rgba(244,241,234,.34); letter-spacing: .06em;">The Quick Brown Fox Video Production Ltd. Registered in England and Wales (Company number 9684936). VAT: 416029127</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/447519094376" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" style="position: fixed; right: 24px; bottom: 24px; z-index: 150; display: flex; align-items: center; gap: 12px; background: #25D366; color: #0A2E14; width: 62px; height: 62px; justify-content: center; padding: 0; border-radius: 50%; box-shadow: 0 12px 34px rgba(0,0,0,.5); transition: transform .18s ease, box-shadow .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 18px 44px rgba(37,211,102,.4); color: #0A2E14;">
+  <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true" fill="#0A2E14"><path d="M16.04 4C9.9 4 4.92 8.98 4.92 15.12c0 2.13.6 4.12 1.63 5.81L4.4 28l7.26-2.1a11.06 11.06 0 0 0 4.38.89c6.14 0 11.12-4.98 11.12-11.12S22.18 4 16.04 4zm0 20.24c-1.45 0-2.82-.38-4.01-1.05l-.29-.16-4.3 1.24 1.25-4.2-.19-.31a8.99 8.99 0 0 1-1.38-4.64c0-4.97 4.04-9.01 9.02-9.01s9.01 4.04 9.01 9.01-4.04 9.12-9.11 9.12zm5.14-6.75c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.18.28-.72.9-.88 1.08-.16.18-.32.21-.6.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.44.12-.58.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.48-.63-.49h-.54c-.18 0-.47.07-.72.35-.25.28-.95.93-.95 2.26 0 1.33.97 2.62 1.1 2.8.14.18 1.9 3.02 4.62 4.13 2.72 1.1 2.72.73 3.21.69.49-.05 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.53-.32z"></path></svg>
+</a>
+
+<sc-if value="{{ reelOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeReel }}" style="position: fixed; inset: 0; z-index: 200; background: rgba(6,6,6,.94); display: flex; align-items: center; justify-content: center; padding: 40px; backdrop-filter: blur(6px);">
+    <div style="width: 100%; max-width: 1100px;">
+      <div style="aspect-ratio: 16/9; border-radius: 6px; border: 1px solid rgba(244,241,234,.16); background: repeating-linear-gradient(115deg, #1A1A1A 0 18px, #131313 18px 36px); display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .22em; color: rgba(244,241,234,.4); text-transform: uppercase;">[ full showreel — captions on ]</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 18px;">
+        <span style="font-family: Anton, sans-serif; font-size: 20px; letter-spacing: .1em; text-transform: uppercase;">Fox Podcast — Showreel 2026</span>
+        <button type="button" onClick="{{ closeReel }}" style="background: none; border: 1px solid rgba(244,241,234,.28); color: #F4F1EA; padding: 10px 18px; border-radius: 3px; cursor: pointer; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-family: 'Instrument Sans', sans-serif;">Close</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;filmGrain&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;parallaxHeadings&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;autoRotateReviews&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = {
+    reelOpen: false,
+    quoteIdx: 0,
+    faqOpen: 0,
+    month: 8, year: 2026,
+    session: 'Studio · London',
+    day: null, time: null,
+    submitted: false,
+    form: { name: '', email: '', company: '', brief: '' }
+  };
+
+  shelf = React.createRef();
+  nav = React.createRef();
+  heroVideo = React.createRef();
+
+  setupParallax() {
+    if (this.props.parallaxHeadings === false) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const nodes = [];
+    document.querySelectorAll('h1, h2').forEach(el => nodes.push({ el, max: el.tagName === 'H1' ? 22 : 14, ease: 1 }));
+    document.querySelectorAll('[data-parallax-slow]').forEach(el => nodes.push({ el, max: 30, ease: 1 }));
+    nodes.forEach(n => {
+      n.el.style.willChange = 'transform';
+      n.el.style.backfaceVisibility = 'hidden';
+      n.current = 0; n.target = 0;
+    });
+    this.pxNodes = nodes;
+
+    const vh = () => window.innerHeight;
+    const compute = () => {
+      const h = vh();
+      nodes.forEach(n => {
+        const r = n.el.getBoundingClientRect();
+        if (r.bottom < -240 || r.top > h + 240) { n.offscreen = true; return; }
+        n.offscreen = false;
+        const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - h / 2) / (h * 0.9)));
+        // ease-out curve so movement settles near the viewport centre
+        n.target = -Math.sign(p) * (1 - Math.pow(1 - Math.abs(p), 2)) * n.max;
+      });
+    };
+
+    const tick = () => {
+      let moving = false;
+      nodes.forEach(n => {
+        if (n.offscreen) return;
+        const d = n.target - n.current;
+        if (Math.abs(d) > 0.05) { n.current += d * 0.12; moving = true; }
+        else n.current = n.target;
+        n.el.style.transform = 'translate3d(0,' + n.current.toFixed(2) + 'px,0)';
+      });
+      this.raf = moving || this.pending ? requestAnimationFrame(tick) : null;
+      this.pending = false;
+    };
+
+    this.onScroll = () => {
+      compute();
+      this.pending = true;
+      if (!this.raf) this.raf = requestAnimationFrame(tick);
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+  }
+
+  measureHeader = () => {
+    const el = this.nav.current;
+    if (!el) return;
+    const h = Math.ceil(el.getBoundingClientRect().height) + 26;
+    document.documentElement.style.setProperty('--fox-hdr', h + 'px');
+  };
+
+  componentDidMount() {
+    this.io = new IntersectionObserver((es) => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + ((i % 4) * 70) + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + ((i % 4) * 70) + 'ms';
+      this.io.observe(el);
+    });
+    if (this.props.autoRotateReviews !== false) {
+      this.timer = setInterval(() => this.setState(s => ({ quoteIdx: (s.quoteIdx + 1) % this.quotes().length })), 6500);
+    }
+    const v = this.heroVideo.current;
+    if (v) { v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    this.setupParallax();
+    this.measureHeader();
+    window.addEventListener('resize', this.measureHeader);
+    this.key = (e) => { if (e.key === 'Escape') this.setState({ reelOpen: false }); };
+    window.addEventListener('keydown', this.key);
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.timer) clearInterval(this.timer);
+    window.removeEventListener('keydown', this.key);
+    window.removeEventListener('resize', this.measureHeader);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.raf) cancelAnimationFrame(this.raf);
+  }
+
+  quotes() {
+    return [
+      { text: 'Their professionalism and creativity truly set them apart.', author: 'Portobello Business Centre', company: 'London' },
+      { text: 'Production of the day was very smooth, and post-shoot editing was very timely.', author: 'Axo Consulting', company: 'London' },
+      { text: 'The price was very reasonable and we were able to work unrushed and with the support of the local contact as and when needed.', author: 'Andrew R.', company: 'Google review' },
+      { text: 'The team were so accommodating and helpful and made the whole process super smooth and easy — I had my files by the end of the day. I can\'t recommend them enough.', author: 'Liz M.', company: 'Google review' },
+      { text: 'Every last detail was incredible. From the overseas planning calls to showing up at the door, it was seamless.', author: 'Leslie D.', company: 'Google review' },
+      { text: 'They impressed us with their high level of professionalism as they nimbly worked through a large amount of material.', author: 'Sophie L.', company: 'Google review' }
+    ];
+  }
+
+  faqData() {
+    return [
+      { q: 'How long until we get the episodes back?', a: 'Standard turnaround is ten working days from the shoot for a full edit, plus a set of shorts. Rush delivery in four days is available on request.' },
+      { q: "What's actually included?", a: 'Multi-camera filming, lighting and sound, full edit with colour and titles, an episode master in your delivery format, three to five vertical shorts and stills from the session.' },
+      { q: 'How far will you travel for on-location shoots?', a: 'Anywhere within roughly 150 miles of London is a standard day rate. Beyond that — and internationally — we quote travel separately and have shot across Europe.' },
+      { q: 'How does pricing work?', a: 'Every project is quoted on scope: number of episodes, crew size, studio or location. Book a 15-minute call and you will have a written quote the same day.' },
+      { q: 'Who owns the footage?', a: 'You do. Full commercial rights to every frame we shoot for you, including the raw files on request.' },
+      { q: 'Do you help with the format itself?', a: 'Yes. Before the first shoot we run a short pre-production call on format, set look, episode length and how the show should open.' }
+    ];
+  }
+
+  monthName(m) { return ['January','February','March','April','May','June','July','August','September','October','November','December'][m - 1]; }
+
+  renderVals() {
+    const acc = '#B00710';
+    const q = this.quotes()[this.state.quoteIdx];
+    const { month, year, day, time, session } = this.state;
+
+    const first = new Date(year, month - 1, 1);
+    const offset = (first.getDay() + 6) % 7;
+    const dim = new Date(year, month, 0).getDate();
+    const cells = [];
+    for (let i = 0; i < offset; i++) cells.push({ label: '', disabled: true, style: 'visibility:hidden;height:40px;border:none;background:none;', go: () => {} });
+    for (let d = 1; d <= dim; d++) {
+      const dow = new Date(year, month - 1, d).getDay();
+      const closed = dow === 0;
+      const sel = day === d;
+      cells.push({
+        label: String(d), disabled: closed,
+        go: closed ? (() => {}) : (() => this.setState({ day: d, submitted: false })),
+        style: 'height:40px;border-radius:4px;font-family:Instrument Sans,sans-serif;font-size:14px;cursor:' + (closed ? 'default' : 'pointer')
+          + ';border:1px solid ' + (sel ? acc : 'rgba(244,241,234,.13)')
+          + ';background:' + (sel ? acc : 'transparent')
+          + ';color:' + (sel ? '#0A0A0A' : closed ? 'rgba(244,241,234,.22)' : '#F4F1EA')
+          + ';font-weight:' + (sel ? '700' : '400') + ';transition:all .18s ease;'
+      });
+    }
+
+    const slotBtn = (t) => ({
+      label: t, go: () => this.setState({ time: t, submitted: false }),
+      style: 'padding:12px 8px;border-radius:4px;cursor:pointer;font-family:Instrument Sans,sans-serif;font-size:14px;letter-spacing:.04em;transition:all .18s ease;'
+        + 'border:1px solid ' + (time === t ? acc : 'rgba(244,241,234,.15)')
+        + ';background:' + (time === t ? acc : 'rgba(244,241,234,.04)')
+        + ';color:' + (time === t ? '#0A0A0A' : '#F4F1EA')
+    });
+
+    const typeBtn = (label) => 'flex:1;padding:14px 12px;border-radius:4px;cursor:pointer;font-family:Instrument Sans,sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;transition:all .18s ease;'
+      + 'border:1px solid ' + (session === label ? acc : 'rgba(244,241,234,.16)')
+      + ';background:' + (session === label ? 'rgba(176,7,16,.14)' : 'transparent')
+      + ';color:' + (session === label ? acc : 'rgba(244,241,234,.7)');
+
+    const ready = day && time;
+    const clients = ['Atomic Podcast','Wham','My Words, My Book','Tim Ferry','Wandsworth Council','Studio Noel','Learn Physio','Behind The Erg','The Conscious Marketing Group','Provarisk','Axo Consulting'];
+
+    const art = (src, pos) => 'position:absolute;inset:0;background-image:url("' + src + '");background-size:cover;background-position:' + (pos || 'center 28%') + ';';
+    const tile = (src) => 'position:absolute;inset:0;background-image:url("' + src + '");background-size:cover;background-position:center;';
+
+    return {
+      filmGrain: this.props.filmGrain !== false,
+      reelOpen: this.state.reelOpen,
+      openReel: () => this.setState({ reelOpen: true }),
+      closeReel: () => this.setState({ reelOpen: false }),
+
+      clientRow: clients.concat(clients),
+
+      navRef: this.nav,
+      heroVideoRef: this.heroVideo,
+      shelfRef: this.shelf,
+      shelfPrev: () => this.shelf.current && this.shelf.current.scrollBy({ left: -700, behavior: 'smooth' }),
+      shelfNext: () => this.shelf.current && this.shelf.current.scrollBy({ left: 700, behavior: 'smooth' }),
+
+      posters: [
+        { title: 'The Founder Room', genre: 'Business', tagline: 'Unscripted hours with the people building Britain.', meta: '42 episodes · Top 10 UK Business', href: '#work', artStyle: art('uploads/podcast-studio-london-1.png') },
+        { title: 'Quiet Ambition', genre: 'Interview', tagline: 'Success without the shouting.', meta: '28 episodes · 1.4M views', href: '#work', artStyle: art('uploads/podcast-studio-london-2.png') },
+        { title: 'Built Different', genre: 'Sport', tagline: 'What it costs to be the best in the room.', meta: '19 episodes · 3× audience growth', href: '#work', artStyle: art('uploads/podcast-studio-london-3.png') },
+        { title: 'Table Nine', genre: 'Food', tagline: 'Chefs, off duty and honest.', meta: '31 episodes · Series 3', href: '#work', artStyle: art('uploads/podcast-studio-london-4.png') },
+        { title: 'Second Act', genre: 'Culture', tagline: 'The career you get after the one you planned.', meta: '24 episodes · 5.0 rated', href: '#work', artStyle: art('uploads/podcast-studio-london-5.png') },
+        { title: 'Halden & Co.', genre: 'Corporate', tagline: 'A boardroom podcast that people outside it watch.', meta: '12 episodes · On-location', href: '#work', artStyle: art('uploads/podcast-studio-london-6.png') }
+      ],
+      cases: [
+        { stat: '1.4M', name: 'Quiet Ambition', result: 'Views in the first six months after we took over filming and editing — from a show that previously shot on a phone.' },
+        { stat: 'Top 10', name: 'The Founder Room', result: 'Charted in UK Business within eleven weeks of switching to a filmed, multi-camera format.' },
+        { stat: '3×', name: 'Built Different', result: 'Audience growth across a single series, with cinematic title cards and shorts cut from the same session.' },
+        { stat: '6 eps', name: 'Halden Group', result: 'A full series captured in one day at their Manchester office, delivered inside a fortnight.' }
+      ],
+      studioShots: [
+        { col: 'span 2', row: 'span 2', label: 'Studio set, wide', artStyle: tile('uploads/podcast-studio-wide.jpg') },
+        { col: 'span 2', row: 'span 1', label: 'Microphone rig detail', artStyle: tile('uploads/mic-rig-detail.jpg') },
+        { col: 'span 1', row: 'span 1', label: 'Camera angle', artStyle: tile('uploads/podcast-camera-angle.jpg') },
+        { col: 'span 1', row: 'span 1', label: 'Green room', artStyle: tile('uploads/Podcast_green_room.jpg') },
+        { col: 'span 2', row: 'span 1', label: 'Control desk', artStyle: tile('uploads/podcast-control-desk.jpg') },
+        { col: 'span 2', row: 'span 1', label: 'Guest seating', artStyle: tile('uploads/podcast-guest.jpg') }
+      ],
+      steps: [
+        { n: '01', title: 'Book', copy: 'Pick a date on the calendar below and tell us the shape of the show.' },
+        { n: '02', title: 'Plan', copy: 'A 15-minute call on format, look and running order. No paperwork.' },
+        { n: '03', title: 'Film', copy: 'Our studio or your location. You host, we handle everything else.' },
+        { n: '04', title: 'Receive', copy: 'Finished episodes, shorts and stills — ready to publish in ten days.' }
+      ],
+
+      quote: q,
+      quoteDots: this.quotes().map((_, i) => ({
+        go: () => this.setState({ quoteIdx: i }),
+        w: i === this.state.quoteIdx ? '34px' : '14px',
+        bg: i === this.state.quoteIdx ? acc : 'rgba(244,241,234,.22)'
+      })),
+
+      faqs: this.faqData().map((f, i) => ({
+        q: f.q, a: f.a,
+        sign: this.state.faqOpen === i ? '−' : '+',
+        go: () => this.setState(s => ({ faqOpen: s.faqOpen === i ? -1 : i })),
+        bodyStyle: 'overflow:hidden;transition:max-height .4s ease,opacity .3s ease;max-height:' + (this.state.faqOpen === i ? '240px' : '0') + ';opacity:' + (this.state.faqOpen === i ? '1' : '0')
+      })),
+
+      monthLabel: this.monthName(month) + ' ' + year,
+      prevMonth: () => this.setState(s => s.month === 1 ? { month: 12, year: s.year - 1, day: null } : { month: s.month - 1, day: null }),
+      nextMonth: () => this.setState(s => s.month === 12 ? { month: 1, year: s.year + 1, day: null } : { month: s.month + 1, day: null }),
+      cells,
+      slots: ['09:00', '11:30', '14:00', '16:30'].map(slotBtn),
+      studioBtnStyle: typeBtn('Studio · London'),
+      locationBtnStyle: typeBtn('On-Location'),
+      pickStudio: () => this.setState({ session: 'Studio · London' }),
+      pickLocation: () => this.setState({ session: 'On-Location' }),
+
+      selectionLabel: ready ? (session + ' — ' + day + ' ' + this.monthName(month).slice(0, 3) + ' ' + year + ', ' + time) : 'Pick a date and time',
+      selectionColor: ready ? acc : 'rgba(244,241,234,.35)',
+      confirmLine: session + ' on ' + day + ' ' + this.monthName(month) + ' ' + year + ' at ' + time + '.',
+      form: this.state.form,
+      setName: (e) => this.setState(s => ({ form: Object.assign({}, s.form, { name: e.target.value }) })),
+      setEmail: (e) => this.setState(s => ({ form: Object.assign({}, s.form, { email: e.target.value }) })),
+      setCompany: (e) => this.setState(s => ({ form: Object.assign({}, s.form, { company: e.target.value }) })),
+      setBrief: (e) => this.setState(s => ({ form: Object.assign({}, s.form, { brief: e.target.value }) })),
+      submit: () => {
+        if (!ready) return;
+        const f = this.state.form;
+        const subject = 'Session enquiry — ' + session + ', ' + day + ' ' + this.monthName(month) + ' ' + year + ' at ' + time;
+        const body = [
+          'Session type: ' + session,
+          'Date: ' + day + ' ' + this.monthName(month) + ' ' + year,
+          'Time: ' + time,
+          '',
+          'Name: ' + (f.name || '—'),
+          'Email: ' + (f.email || '—'),
+          'Company / show: ' + (f.company || '—'),
+          '',
+          'About the show:',
+          f.brief || '—'
+        ].join('\n');
+        window.location.href = 'mailto:hello@thequickbrownfox.co.uk?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        this.setState({ submitted: true });
+      },
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      submitStyle: 'width:100%;margin-top:18px;padding:17px;border:none;border-radius:4px;cursor:' + (ready ? 'pointer' : 'not-allowed')
+        + ';font-family:Instrument Sans,sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:all .2s ease;'
+        + 'background:' + (ready ? acc : 'rgba(244,241,234,.1)') + ';color:' + (ready ? '#0A0A0A' : 'rgba(244,241,234,.35)')
+    };
+  }
+}
+</script>
+</body>
+</html>
